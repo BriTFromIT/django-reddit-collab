@@ -5,9 +5,9 @@ from django.db import models
 class Post(models.Model):
     created_at = models.DateTimeField()
     title = models.CharField(max_length=400)
-    picture = models.TextField()
-    content = models.CharField(max_length=500)
-    site_url = models.TextField()
+    picture = models.CharField(max_length=400, null=True, blank=True)
+    content = models.CharField(max_length=350)
+    site_url = models.CharField(max_length=400, null=True, blank=True)
     vote_total = models.IntegerField()
 
 
