@@ -11,8 +11,14 @@ class Post(models.Model):
     vote_total = models.IntegerField()
 
 
+    def __str__(self):
+        return self.title
+
+
 class Comment(models.Model):
     created_at = models.DateTimeField()
     content = models.CharField(max_length=500)
     vote_total = models.IntegerField()
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+
+
