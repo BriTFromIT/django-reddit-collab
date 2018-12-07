@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django-extensions',
+    'rest_framework',
     'django_reddit'
 ]
 
@@ -76,8 +78,12 @@ WSGI_APPLICATION = 'django_reddit.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'reddit_db',
+        'USER': 'reddit_user',
+        'PASSWORD': 'reddit',
+        'HOST': 'localhost'
+
     }
 }
 
